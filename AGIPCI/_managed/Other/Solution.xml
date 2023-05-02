@@ -6,7 +6,7 @@
       <LocalizedName description="AGIP-CI" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>23.5.2.1</Version>
+    <Version>23.5.2.2</Version>
     <Managed>1</Managed>
     <Publisher>
       <UniqueName>AGIP</UniqueName>

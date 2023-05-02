@@ -6,7 +6,7 @@
       <LocalizedName description="AGIP-CI" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>23.5.2.1</Version>
+    <Version>23.5.2.2</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>AGIP</UniqueName>
@@ -519,7 +519,7 @@
         <Required type="2" schemaName="opportunityid" displayName="Opportunity" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">
           <package>msdynce_SalesAnchor (9.0.23033.10010)</package>
         </Required>
-        <Dependent type="10" schemaName="agip_agip_competitorstm_OpportunityName_opport" displayName="agip_agip_competitorstm_OpportunityName_opport" parentSchemaName="opportunity" parentDisplayName="Opportunity" />
+        <Dependent type="10" schemaName="agip_agip_competitorstm_agip_Comp_opportunity" displayName="agip_agip_competitorstm_agip_Comp_opportunity" parentSchemaName="opportunity" parentDisplayName="Opportunity" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="opportunityid" displayName="Opportunity" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">

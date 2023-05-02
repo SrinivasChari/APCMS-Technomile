@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{7bd2b0bb-1fda-ed11-a7c7-000d3a37d3bf}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="name" select="1" icon="1" preview="1">
+        <row name="result" id="opportunityid">
+          <cell name="name" width="200" />
+          <cell name="crd2f_accountname" width="100" />
+          <cell name="crd2f_stage" width="100" />
+          <cell name="crd7270_rfpreleasedate" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="opportunity">
+          <attribute name="name" />
+          <attribute name="opportunityid" />
+          <attribute name="crd2f_accountname" />
+          <attribute name="crd2f_stage" />
+          <attribute name="crd7270_rfpreleasedate" />
+          <order attribute="name" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>23.4.12.2</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Opportunity_Pipeline" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

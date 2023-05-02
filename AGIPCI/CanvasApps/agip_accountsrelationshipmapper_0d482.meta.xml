@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>agip_accountsrelationshipmapper_0d482</Name>
+  <AppVersion>2023-04-21T17:44:39Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.23041.11.0</CreatedByClientVersion>
+  <MinClientVersion>3.23041.11.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Web","publisherVersion":"3.23041.11","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20230421T174439Z-3.23041.11.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>Accounts_Canvas</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"a60a116b-5298-45fd-8cb4-79bf6c9c69c0":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png","dataSources":["GetContacts"],"dependencies":["67e1c4df-e169-4abd-a8ae-967200b3a8d4"],"dependents":[],"parameterHints":{"workflowName":{"value":"648b5a96-4fd5-4ce2-b4f6-de87f5cf40d1"},"workflowEntityId":{"value":"974f430c-28e0-ed11-a7c7-000d3a37d40b"},"67e1c4df-e169-4abd-a8ae-967200b3a8d4":{"value":"shared_commondataserviceforapps"}},"parameterHintsV2":{"workflowName":{"value":"648b5a96-4fd5-4ce2-b4f6-de87f5cf40d1"},"workflowEntityId":{"value":"974f430c-28e0-ed11-a7c7-000d3a37d40b"},"shared_commondataserviceforapps":{"value":"67e1c4df-e169-4abd-a8ae-967200b3a8d4"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]},"67e1c4df-e169-4abd-a8ae-967200b3a8d4":{"id":"/providers/microsoft.powerapps/apis/shared_commondataserviceforapps","displayName":"Microsoft Dataverse","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1628/1.0.1628.3245/commondataserviceforapps/icon.png","dataSources":[],"dependencies":[],"dependents":["a60a116b-5298-45fd-8cb4-79bf6c9c69c0"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium"}}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Accounts":{"entitySetName":"accounts","logicalName":"account"},"Contacts":{"entitySetName":"contacts","logicalName":"contact"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"account","componenttype":1},{"logicalname":"contact","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/agip_accountsrelationshipmapper_0d482_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/agip_accountsrelationshipmapper_0d482_DocumentUri.msapp</DocumentUri>
+</CanvasApp>

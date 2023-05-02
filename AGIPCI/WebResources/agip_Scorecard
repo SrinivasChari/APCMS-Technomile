@@ -1,0 +1,96 @@
+var Xrm = parent.Xrm;
+var PreviousStage = null;
+
+function ScorecardLoad(executionContext) {
+    "use strict";
+    var formContext = executionContext.getFormContext();
+    try {
+        var formId = formContext.ui.formSelector.getCurrentItem().getId();
+        if (formId === "c928e116-cf6a-43c5-8627-10b86417db77")// Growth Form
+        {
+            formContext.data.process.addOnStageSelected(scorecardStageSelected);
+            //Xrm.Page.data.process.addOnStageSelected(onStageSelected);
+            //var stage = Xrm.Page.data.process.getActiveStage();
+            //PreviousStage = stage.getName();
+            formContext.data.process.addOnStageChange(scorecardStageOnChange);
+            var serverUrl = location.protocol + "//" + location.host;
+            include(serverUrl + '/WebResources/fedcap_/AlertJS/js/alert.js');
+        }
+    } catch (e) {
+
+    }
+
+}
+
+
+
+//function scorecardStageSeleted() {
+//    console.log('Stage '+Xrm.Page.data.process.getActiveStage().getName());
+//    var serverUrl = location.protocol + "//" + location.host;
+//    var stage = Xrm.Page.data.process.getActiveStage();
+//    var formId = Xrm.Page.ui.formSelector.getCurrentItem().getId();
+//    if (formId === "c928e116-cf6a-43c5-8627-10b86417db77")// Growth Form
+//    {
+//        localStorage.Growth_Scorecard_PreviousStage = PreviousStage;
+//        localStorage.Growth_Scorecard_CurrentStage = stage.getName();
+//        setTimeout(function () {
+//            Alert.showWebResource("fedcap_ScorecardPopUp", 1000, 430, "", "", serverUrl, "", 0);
+//        }, 1000);
+//    }
+
+//}
+
+
+
+
+
+//}
+
+function scorecardStageOnChange(executionContext) {
+    "use strict";
+    var formContext = executionContext.getFormContext();
+    try {
+        var stage = formContext.data.process.getActiveStage();
+        var serverUrl = location.protocol + "//" + location.host;
+        //var stage = Xrm.Page.data.process.getActiveStage();
+        if (PreviousStage !== stage.getName()) {
+            var formId = formContext.ui.formSelector.getCurrentItem().getId();
+            if (formId === "c928e116-cf6a-43c5-8627-10b86417db77")// Growth Form
+            {
+                localStorage.Growth_Scorecard_PreviousStage = PreviousStage;
+                localStorage.Growth_Scorecard_CurrentStage = stage.getName();
+                PreviousStage = stage.getName();
+                setTimeout(function () {
+                    Alert.showWebResource("fedcap_ScorecardPopUp", 850, 430, "", "", serverUrl, "", 0);
+                }, 300);
+            }
+        }
+
+    } catch (e) {
+
+    }
+}
+
+function scorecardStageSelected(executionContext) {
+    "use strict";
+    var formContext = executionContext.getFormContext();
+    try {
+       
+        var stage = formContext.data.process.getSelectedStage();
+        var laststage = stage.getName();
+        PreviousStage = laststage;
+    } catch (e) {
+
+    }
+}
+
+function include(file) {
+    "use strict";
+    var script = document.createElement('script');
+    script.src = file;
+    script.type = 'text/javascript';
+    script.defer = true;
+
+    document.getElementsByTagName('head').item(0).appendChild(script);
+
+}

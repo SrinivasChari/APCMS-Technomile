@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{c957ac8e-36ee-4430-8be3-e42f0aa81e26}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{3d34b8c4-18e1-4cdc-85ec-1ffd4cf06059}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{e356bed9-c927-43de-a78c-8f43af6670f8}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{44780bc0-dc3d-478d-921d-d26e0a110070}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Account Name" languagecode="1033" />
+                        </labels>
+                        <control id="agip_accountname" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_accountname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{deac2153-64d4-4c52-b6c3-85f986835100}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Role" languagecode="1033" />
+                        </labels>
+                        <control id="agip_role" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="agip_role" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f0f60a06-54ed-4ebc-99a2-b67a3edfb0d1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Contract vehicle" languagecode="1033" />
+                        </labels>
+                        <control id="agip_contractvehicle" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_contractvehicle" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{594e6930-ca96-4d9d-80fa-939a79cb3081}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{021f2de1-813e-4605-ac32-181eb11af9a2}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{40f21881-8f0c-467d-ae85-3c030ede297a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{406e6509-f40e-46ed-9a20-8a62b48c47ff}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{2feb9893-9dd4-41d4-8d7e-9e7833bbc9e6}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{2be66061-9b12-421e-ab26-9ed528a4c0d7}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{0d46965b-d5fd-4d89-bb22-b52ecaf469ab}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{97fcbf22-d9e4-4a9f-b26a-e22c3645c7c7}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a4ee388a-f24c-4b1f-b01c-d33a935753a3}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

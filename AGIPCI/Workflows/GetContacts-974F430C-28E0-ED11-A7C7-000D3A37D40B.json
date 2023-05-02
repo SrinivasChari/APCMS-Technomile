@@ -1,0 +1,1533 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_c7b41"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "f152d2df-cba6-4baf-b109-0edd592aeff0"
+          },
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "AccountID",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "List_rows": {
+          "runAfter": {
+            "Get_a_row_by_ID": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "02a00a7b-244f-4660-9b8a-bbbed3a3556e"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "contacts",
+              "$filter": "_parentcustomerid_value eq '@{outputs('Get_a_row_by_ID')?['body/accountid']}'"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_a_row_by_ID": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "09c2c8fa-8285-45e2-b568-23698e68b20c"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "accounts",
+              "recordId": "@triggerBody()['text']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Response": {
+          "runAfter": {
+            "List_rows": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e5739cf1-ef7d-42ec-a63b-e1e15ee09463"
+          },
+          "type": "Response",
+          "kind": "Http",
+          "inputs": {
+            "statusCode": 200,
+            "body": "@outputs('List_rows')?['body/value']",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "@@odata.type": {
+                    "type": "string"
+                  },
+                  "@@odata.id": {
+                    "type": "string"
+                  },
+                  "@@odata.etag": {
+                    "type": "string"
+                  },
+                  "@@odata.editLink": {
+                    "type": "string"
+                  },
+                  "customertypecode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "customertypecode": {
+                    "type": "integer"
+                  },
+                  "address2_addresstypecode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "address2_addresstypecode": {
+                    "type": "integer"
+                  },
+                  "merged@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "merged": {
+                    "type": "boolean"
+                  },
+                  "territorycode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "territorycode": {
+                    "type": "integer"
+                  },
+                  "haschildrencode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "haschildrencode": {
+                    "type": "integer"
+                  },
+                  "preferredappointmenttimecode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "preferredappointmenttimecode": {
+                    "type": "integer"
+                  },
+                  "msdyn_orgchangestatus@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "msdyn_orgchangestatus": {
+                    "type": "integer"
+                  },
+                  "isbackofficecustomer@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "isbackofficecustomer": {
+                    "type": "boolean"
+                  },
+                  "modifiedon@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "modifiedon@odata.type": {
+                    "type": "string"
+                  },
+                  "modifiedon": {
+                    "type": "string"
+                  },
+                  "_owninguser_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                    "type": "string"
+                  },
+                  "_owninguser_value@odata.type": {
+                    "type": "string"
+                  },
+                  "_owninguser_value": {
+                    "type": "string"
+                  },
+                  "lastname": {
+                    "type": "string"
+                  },
+                  "marketingonly@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "marketingonly": {
+                    "type": "boolean"
+                  },
+                  "donotphone@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "donotphone": {
+                    "type": "boolean"
+                  },
+                  "preferredcontactmethodcode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "preferredcontactmethodcode": {
+                    "type": "integer"
+                  },
+                  "educationcode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "educationcode": {
+                    "type": "integer"
+                  },
+                  "_ownerid_value@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "_ownerid_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                    "type": "string"
+                  },
+                  "_ownerid_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                    "type": "string"
+                  },
+                  "_ownerid_value@odata.type": {
+                    "type": "string"
+                  },
+                  "_ownerid_value": {
+                    "type": "string"
+                  },
+                  "customersizecode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "customersizecode": {
+                    "type": "integer"
+                  },
+                  "firstname": {
+                    "type": "string"
+                  },
+                  "donotpostalmail@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "donotpostalmail": {
+                    "type": "boolean"
+                  },
+                  "yomifullname": {
+                    "type": "string"
+                  },
+                  "donotemail@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "donotemail": {
+                    "type": "boolean"
+                  },
+                  "address2_shippingmethodcode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "address2_shippingmethodcode": {
+                    "type": "integer"
+                  },
+                  "fullname": {
+                    "type": "string"
+                  },
+                  "address1_addressid@odata.type": {
+                    "type": "string"
+                  },
+                  "address1_addressid": {
+                    "type": "string"
+                  },
+                  "msdyn_gdproptout@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "msdyn_gdproptout": {
+                    "type": "boolean"
+                  },
+                  "address2_freighttermscode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "address2_freighttermscode": {
+                    "type": "integer"
+                  },
+                  "statuscode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "statuscode": {
+                    "type": "integer"
+                  },
+                  "createdon@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "createdon@odata.type": {
+                    "type": "string"
+                  },
+                  "createdon": {
+                    "type": "string"
+                  },
+                  "versionnumber@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "versionnumber@odata.type": {
+                    "type": "string"
+                  },
+                  "versionnumber": {
+                    "type": "integer"
+                  },
+                  "donotsendmm@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "donotsendmm": {
+                    "type": "boolean"
+                  },
+                  "donotfax@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "donotfax": {
+                    "type": "boolean"
+                  },
+                  "leadsourcecode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "leadsourcecode": {
+                    "type": "integer"
+                  },
+                  "creditonhold@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "creditonhold": {
+                    "type": "boolean"
+                  },
+                  "address3_addressid@odata.type": {
+                    "type": "string"
+                  },
+                  "address3_addressid": {
+                    "type": "string"
+                  },
+                  "donotbulkemail@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "donotbulkemail": {
+                    "type": "boolean"
+                  },
+                  "_modifiedby_value@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "_modifiedby_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                    "type": "string"
+                  },
+                  "_modifiedby_value@odata.type": {
+                    "type": "string"
+                  },
+                  "_modifiedby_value": {
+                    "type": "string"
+                  },
+                  "followemail@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "followemail": {
+                    "type": "boolean"
+                  },
+                  "shippingmethodcode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "shippingmethodcode": {
+                    "type": "integer"
+                  },
+                  "_createdby_value@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "_createdby_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                    "type": "string"
+                  },
+                  "_createdby_value@odata.type": {
+                    "type": "string"
+                  },
+                  "_createdby_value": {
+                    "type": "string"
+                  },
+                  "contactid@odata.type": {
+                    "type": "string"
+                  },
+                  "contactid": {
+                    "type": "string"
+                  },
+                  "donotbulkpostalmail@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "donotbulkpostalmail": {
+                    "type": "boolean"
+                  },
+                  "_parentcustomerid_value@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "_parentcustomerid_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                    "type": "string"
+                  },
+                  "_parentcustomerid_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                    "type": "string"
+                  },
+                  "_parentcustomerid_value@odata.type": {
+                    "type": "string"
+                  },
+                  "_parentcustomerid_value": {
+                    "type": "string"
+                  },
+                  "_agip_reportsto_value@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "_agip_reportsto_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                    "type": "string"
+                  },
+                  "_agip_reportsto_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                    "type": "string"
+                  },
+                  "_agip_reportsto_value@odata.type": {
+                    "type": "string"
+                  },
+                  "_agip_reportsto_value": {
+                    "type": "string"
+                  },
+                  "participatesinworkflow@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "participatesinworkflow": {
+                    "type": "boolean"
+                  },
+                  "statecode@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "statecode": {
+                    "type": "integer"
+                  },
+                  "_owningbusinessunit_value@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "_owningbusinessunit_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                    "type": "string"
+                  },
+                  "_owningbusinessunit_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                    "type": "string"
+                  },
+                  "_owningbusinessunit_value@odata.type": {
+                    "type": "string"
+                  },
+                  "_owningbusinessunit_value": {
+                    "type": "string"
+                  },
+                  "address2_addressid@odata.type": {
+                    "type": "string"
+                  },
+                  "address2_addressid": {
+                    "type": "string"
+                  },
+                  "ownerid@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "ownerid@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "parentcustomerid_account@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "parentcustomerid_account@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "agip_ReportsTo@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "agip_ReportsTo@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "owningbusinessunit@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "owningbusinessunit@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_principalobjectattributeaccess@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_principalobjectattributeaccess@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_connections1@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_connections1@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Feedback@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Feedback@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_ProcessSessions@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_ProcessSessions@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "stageid_processstage@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "stageid_processstage@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_ActivityPointers@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_ActivityPointers@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_SocialActivities@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_SocialActivities@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "lk_contact_feedback_createdonbehalfby@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "lk_contact_feedback_createdonbehalfby@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_PostFollows@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_PostFollows@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_PostRoles@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_PostRoles@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_PostRegardings@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_PostRegardings@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "socialactivity_postauthor_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "socialactivity_postauthor_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_customer_relationship_partner@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_customer_relationship_partner@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Phonecalls@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Phonecalls@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Tasks@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Tasks@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_SyncErrors@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_SyncErrors@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "slainvokedid_contact_sla@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "slainvokedid_contact_sla@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_ExternalPartyItems@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_ExternalPartyItems@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "sla_contact_sla@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "sla_contact_sla@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "createdonbehalfby@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "createdonbehalfby@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Annotation@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Annotation@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "masterid@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "masterid@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_master_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_master_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "modifiedonbehalfby@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "modifiedonbehalfby@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "userentityinstancedata_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "userentityinstancedata_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Email_EmailSender@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Email_EmailSender@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "account_primary_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "account_primary_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "createdby@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "createdby@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_subscription_association@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_subscription_association@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_customer_relationship_customer@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_customer_relationship_customer@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_actioncard@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_actioncard@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "socialactivity_postauthoraccount_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "socialactivity_postauthoraccount_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Socialprofile_customer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Socialprofile_customer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_CustomerAddress@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_CustomerAddress@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "CreatedByExternalParty@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "CreatedByExternalParty@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "owningteam@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "owningteam@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_DuplicateMatchingRecord@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_DuplicateMatchingRecord@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "lk_contact_feedback_createdby@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "lk_contact_feedback_createdby@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "slakpiinstance_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "slakpiinstance_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "preferredsystemuserid@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "preferredsystemuserid@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Faxes@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Faxes@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_MailboxTrackingFolder@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_MailboxTrackingFolder@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Appointments@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Appointments@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "owninguser@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "owninguser@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_AsyncOperations@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_AsyncOperations@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "transactioncurrencyid@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "transactioncurrencyid@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_RecurringAppointmentMasters@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_RecurringAppointmentMasters@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "entityimageid_imagedescriptor@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "entityimageid_imagedescriptor@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_BulkDeleteFailures@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_BulkDeleteFailures@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "parentcustomerid_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "parentcustomerid_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_customer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_customer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_connections2@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_connections2@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_DuplicateBaseRecord@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_DuplicateBaseRecord@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "modifiedby@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "modifiedby@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Emails@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Emails@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "ModifiedByExternalParty@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "ModifiedByExternalParty@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_activity_parties@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_activity_parties@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Letters@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_Letters@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_chats@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_chats@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "lead_customer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "lead_customer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contactleads_association@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contactleads_association@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "lead_parent_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "lead_parent_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "originatingleadid@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "originatingleadid@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "defaultpricelevelid@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "defaultpricelevelid@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_bookableresource_ContactId@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_bookableresource_ContactId@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_BulkOperations@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_BulkOperations@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "CreatedContact_BulkOperationLogs@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "CreatedContact_BulkOperationLogs@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "SourceContact_BulkOperationLogs@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "SourceContact_BulkOperationLogs@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_CampaignResponses@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_CampaignResponses@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "listcontact_association@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "listcontact_association@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "BulkOperation_Logs_Contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "BulkOperation_Logs_Contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "CampaignActivity_Logs_Contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "CampaignActivity_Logs_Contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "Contact_ServiceAppointments@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "Contact_ServiceAppointments@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_as_responsible_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_as_responsible_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contractlineitem_customer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contractlineitem_customer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contract_billingcustomer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contract_billingcustomer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contract_customer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contract_customer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "incident_customer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "incident_customer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_as_primary_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_as_primary_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_entitlement_ContactId@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_entitlement_ContactId@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_entitlement_Customer@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_entitlement_Customer@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "entitlementcontacts_association@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "entitlementcontacts_association@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "servicecontractcontacts_association@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "servicecontractcontacts_association@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "preferredequipmentid@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "preferredequipmentid@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "preferredserviceid@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "preferredserviceid@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contactinvoices_association@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contactinvoices_association@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contactorders_association@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contactorders_association@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_customer_opportunity_roles@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_customer_opportunity_roles@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "invoice_customer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "invoice_customer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "opportunity_customer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "opportunity_customer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "order_customer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "order_customer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "quote_customer_contacts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "quote_customer_contacts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contactquotes_association@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contactquotes_association@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "opportunity_parent_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "opportunity_parent_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_playbookinstance_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_playbookinstance_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_msdyn_taggedrecord_contact_msdyn_dynamicsrecordid@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_msdyn_taggedrecord_contact_msdyn_dynamicsrecordid@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_Posts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_Posts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_msfp_alerts@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_msfp_alerts@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_msfp_surveyinvites@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_msfp_surveyinvites@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_msfp_surveyresponses@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_msfp_surveyresponses@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_msdyn_preferredagent_contact_msdyn_recordId@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_msdyn_preferredagent_contact_msdyn_recordId@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_msdyn_ocliveworkitems@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_msdyn_ocliveworkitems@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "contact_msdyn_ocsessions@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "contact_msdyn_ocsessions@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_contact_msdyn_ocliveworkitem_Customer@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_contact_msdyn_ocliveworkitem_Customer@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_contact_msdyn_liveconversation_Customer@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_contact_msdyn_liveconversation_Customer@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_contact_msdyn_salessuggestion@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_contact_msdyn_salessuggestion@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_segmentid@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "msdyn_segmentid@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "agip_agip_partner_PointofContact_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "agip_agip_partner_PointofContact_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "agip_agip_vehiclepartners_PointofContact_conta@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "agip_agip_vehiclepartners_PointofContact_conta@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "agip_contact_ReportsTo_contact@odata.associationLink": {
+                    "type": "string"
+                  },
+                  "agip_contact_ReportsTo_contact@odata.navigationLink": {
+                    "type": "string"
+                  },
+                  "#Microsoft.Dynamics.CRM.msdyn_GDPROptoutContact": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      },
+                      "target": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "processid@odata.type": {
+                    "type": "string"
+                  },
+                  "processid": {
+                    "type": "string"
+                  },
+                  "exchangerate@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "exchangerate@odata.type": {
+                    "type": "string"
+                  },
+                  "exchangerate": {
+                    "type": "integer"
+                  },
+                  "_transactioncurrencyid_value@OData.Community.Display.V1.FormattedValue": {
+                    "type": "string"
+                  },
+                  "_transactioncurrencyid_value@Microsoft.Dynamics.CRM.associatednavigationproperty": {
+                    "type": "string"
+                  },
+                  "_transactioncurrencyid_value@Microsoft.Dynamics.CRM.lookuplogicalname": {
+                    "type": "string"
+                  },
+                  "_transactioncurrencyid_value@odata.type": {
+                    "type": "string"
+                  },
+                  "_transactioncurrencyid_value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "@@odata.type",
+                  "@@odata.id",
+                  "@@odata.etag",
+                  "@@odata.editLink",
+                  "customertypecode@OData.Community.Display.V1.FormattedValue",
+                  "customertypecode",
+                  "address2_addresstypecode@OData.Community.Display.V1.FormattedValue",
+                  "address2_addresstypecode",
+                  "merged@OData.Community.Display.V1.FormattedValue",
+                  "merged",
+                  "territorycode@OData.Community.Display.V1.FormattedValue",
+                  "territorycode",
+                  "haschildrencode@OData.Community.Display.V1.FormattedValue",
+                  "haschildrencode",
+                  "preferredappointmenttimecode@OData.Community.Display.V1.FormattedValue",
+                  "preferredappointmenttimecode",
+                  "msdyn_orgchangestatus@OData.Community.Display.V1.FormattedValue",
+                  "msdyn_orgchangestatus",
+                  "isbackofficecustomer@OData.Community.Display.V1.FormattedValue",
+                  "isbackofficecustomer",
+                  "modifiedon@OData.Community.Display.V1.FormattedValue",
+                  "modifiedon@odata.type",
+                  "modifiedon",
+                  "_owninguser_value@Microsoft.Dynamics.CRM.lookuplogicalname",
+                  "_owninguser_value@odata.type",
+                  "_owninguser_value",
+                  "lastname",
+                  "marketingonly@OData.Community.Display.V1.FormattedValue",
+                  "marketingonly",
+                  "donotphone@OData.Community.Display.V1.FormattedValue",
+                  "donotphone",
+                  "preferredcontactmethodcode@OData.Community.Display.V1.FormattedValue",
+                  "preferredcontactmethodcode",
+                  "educationcode@OData.Community.Display.V1.FormattedValue",
+                  "educationcode",
+                  "_ownerid_value@OData.Community.Display.V1.FormattedValue",
+                  "_ownerid_value@Microsoft.Dynamics.CRM.associatednavigationproperty",
+                  "_ownerid_value@Microsoft.Dynamics.CRM.lookuplogicalname",
+                  "_ownerid_value@odata.type",
+                  "_ownerid_value",
+                  "customersizecode@OData.Community.Display.V1.FormattedValue",
+                  "customersizecode",
+                  "firstname",
+                  "donotpostalmail@OData.Community.Display.V1.FormattedValue",
+                  "donotpostalmail",
+                  "yomifullname",
+                  "donotemail@OData.Community.Display.V1.FormattedValue",
+                  "donotemail",
+                  "address2_shippingmethodcode@OData.Community.Display.V1.FormattedValue",
+                  "address2_shippingmethodcode",
+                  "fullname",
+                  "address1_addressid@odata.type",
+                  "address1_addressid",
+                  "msdyn_gdproptout@OData.Community.Display.V1.FormattedValue",
+                  "msdyn_gdproptout",
+                  "address2_freighttermscode@OData.Community.Display.V1.FormattedValue",
+                  "address2_freighttermscode",
+                  "statuscode@OData.Community.Display.V1.FormattedValue",
+                  "statuscode",
+                  "createdon@OData.Community.Display.V1.FormattedValue",
+                  "createdon@odata.type",
+                  "createdon",
+                  "versionnumber@OData.Community.Display.V1.FormattedValue",
+                  "versionnumber@odata.type",
+                  "versionnumber",
+                  "donotsendmm@OData.Community.Display.V1.FormattedValue",
+                  "donotsendmm",
+                  "donotfax@OData.Community.Display.V1.FormattedValue",
+                  "donotfax",
+                  "leadsourcecode@OData.Community.Display.V1.FormattedValue",
+                  "leadsourcecode",
+                  "creditonhold@OData.Community.Display.V1.FormattedValue",
+                  "creditonhold",
+                  "address3_addressid@odata.type",
+                  "address3_addressid",
+                  "donotbulkemail@OData.Community.Display.V1.FormattedValue",
+                  "donotbulkemail",
+                  "_modifiedby_value@OData.Community.Display.V1.FormattedValue",
+                  "_modifiedby_value@Microsoft.Dynamics.CRM.lookuplogicalname",
+                  "_modifiedby_value@odata.type",
+                  "_modifiedby_value",
+                  "followemail@OData.Community.Display.V1.FormattedValue",
+                  "followemail",
+                  "shippingmethodcode@OData.Community.Display.V1.FormattedValue",
+                  "shippingmethodcode",
+                  "_createdby_value@OData.Community.Display.V1.FormattedValue",
+                  "_createdby_value@Microsoft.Dynamics.CRM.lookuplogicalname",
+                  "_createdby_value@odata.type",
+                  "_createdby_value",
+                  "contactid@odata.type",
+                  "contactid",
+                  "donotbulkpostalmail@OData.Community.Display.V1.FormattedValue",
+                  "donotbulkpostalmail",
+                  "_parentcustomerid_value@OData.Community.Display.V1.FormattedValue",
+                  "_parentcustomerid_value@Microsoft.Dynamics.CRM.associatednavigationproperty",
+                  "_parentcustomerid_value@Microsoft.Dynamics.CRM.lookuplogicalname",
+                  "_parentcustomerid_value@odata.type",
+                  "_parentcustomerid_value",
+                  "participatesinworkflow@OData.Community.Display.V1.FormattedValue",
+                  "participatesinworkflow",
+                  "statecode@OData.Community.Display.V1.FormattedValue",
+                  "statecode",
+                  "_owningbusinessunit_value@OData.Community.Display.V1.FormattedValue",
+                  "_owningbusinessunit_value@Microsoft.Dynamics.CRM.associatednavigationproperty",
+                  "_owningbusinessunit_value@Microsoft.Dynamics.CRM.lookuplogicalname",
+                  "_owningbusinessunit_value@odata.type",
+                  "_owningbusinessunit_value",
+                  "address2_addressid@odata.type",
+                  "address2_addressid",
+                  "ownerid@odata.associationLink",
+                  "ownerid@odata.navigationLink",
+                  "parentcustomerid_account@odata.associationLink",
+                  "parentcustomerid_account@odata.navigationLink",
+                  "agip_ReportsTo@odata.associationLink",
+                  "agip_ReportsTo@odata.navigationLink",
+                  "owningbusinessunit@odata.associationLink",
+                  "owningbusinessunit@odata.navigationLink",
+                  "contact_principalobjectattributeaccess@odata.associationLink",
+                  "contact_principalobjectattributeaccess@odata.navigationLink",
+                  "contact_connections1@odata.associationLink",
+                  "contact_connections1@odata.navigationLink",
+                  "Contact_Feedback@odata.associationLink",
+                  "Contact_Feedback@odata.navigationLink",
+                  "Contact_ProcessSessions@odata.associationLink",
+                  "Contact_ProcessSessions@odata.navigationLink",
+                  "stageid_processstage@odata.associationLink",
+                  "stageid_processstage@odata.navigationLink",
+                  "Contact_ActivityPointers@odata.associationLink",
+                  "Contact_ActivityPointers@odata.navigationLink",
+                  "Contact_SocialActivities@odata.associationLink",
+                  "Contact_SocialActivities@odata.navigationLink",
+                  "lk_contact_feedback_createdonbehalfby@odata.associationLink",
+                  "lk_contact_feedback_createdonbehalfby@odata.navigationLink",
+                  "contact_PostFollows@odata.associationLink",
+                  "contact_PostFollows@odata.navigationLink",
+                  "contact_PostRoles@odata.associationLink",
+                  "contact_PostRoles@odata.navigationLink",
+                  "contact_PostRegardings@odata.associationLink",
+                  "contact_PostRegardings@odata.navigationLink",
+                  "socialactivity_postauthor_contacts@odata.associationLink",
+                  "socialactivity_postauthor_contacts@odata.navigationLink",
+                  "contact_customer_relationship_partner@odata.associationLink",
+                  "contact_customer_relationship_partner@odata.navigationLink",
+                  "Contact_Phonecalls@odata.associationLink",
+                  "Contact_Phonecalls@odata.navigationLink",
+                  "Contact_Tasks@odata.associationLink",
+                  "Contact_Tasks@odata.navigationLink",
+                  "Contact_SyncErrors@odata.associationLink",
+                  "Contact_SyncErrors@odata.navigationLink",
+                  "slainvokedid_contact_sla@odata.associationLink",
+                  "slainvokedid_contact_sla@odata.navigationLink",
+                  "Contact_ExternalPartyItems@odata.associationLink",
+                  "Contact_ExternalPartyItems@odata.navigationLink",
+                  "sla_contact_sla@odata.associationLink",
+                  "sla_contact_sla@odata.navigationLink",
+                  "createdonbehalfby@odata.associationLink",
+                  "createdonbehalfby@odata.navigationLink",
+                  "Contact_Annotation@odata.associationLink",
+                  "Contact_Annotation@odata.navigationLink",
+                  "masterid@odata.associationLink",
+                  "masterid@odata.navigationLink",
+                  "contact_master_contact@odata.associationLink",
+                  "contact_master_contact@odata.navigationLink",
+                  "modifiedonbehalfby@odata.associationLink",
+                  "modifiedonbehalfby@odata.navigationLink",
+                  "userentityinstancedata_contact@odata.associationLink",
+                  "userentityinstancedata_contact@odata.navigationLink",
+                  "Contact_Email_EmailSender@odata.associationLink",
+                  "Contact_Email_EmailSender@odata.navigationLink",
+                  "account_primary_contact@odata.associationLink",
+                  "account_primary_contact@odata.navigationLink",
+                  "createdby@odata.associationLink",
+                  "createdby@odata.navigationLink",
+                  "contact_subscription_association@odata.associationLink",
+                  "contact_subscription_association@odata.navigationLink",
+                  "contact_customer_relationship_customer@odata.associationLink",
+                  "contact_customer_relationship_customer@odata.navigationLink",
+                  "contact_actioncard@odata.associationLink",
+                  "contact_actioncard@odata.navigationLink",
+                  "socialactivity_postauthoraccount_contacts@odata.associationLink",
+                  "socialactivity_postauthoraccount_contacts@odata.navigationLink",
+                  "Socialprofile_customer_contacts@odata.associationLink",
+                  "Socialprofile_customer_contacts@odata.navigationLink",
+                  "Contact_CustomerAddress@odata.associationLink",
+                  "Contact_CustomerAddress@odata.navigationLink",
+                  "CreatedByExternalParty@odata.associationLink",
+                  "CreatedByExternalParty@odata.navigationLink",
+                  "owningteam@odata.associationLink",
+                  "owningteam@odata.navigationLink",
+                  "Contact_DuplicateMatchingRecord@odata.associationLink",
+                  "Contact_DuplicateMatchingRecord@odata.navigationLink",
+                  "lk_contact_feedback_createdby@odata.associationLink",
+                  "lk_contact_feedback_createdby@odata.navigationLink",
+                  "slakpiinstance_contact@odata.associationLink",
+                  "slakpiinstance_contact@odata.navigationLink",
+                  "preferredsystemuserid@odata.associationLink",
+                  "preferredsystemuserid@odata.navigationLink",
+                  "Contact_Faxes@odata.associationLink",
+                  "Contact_Faxes@odata.navigationLink",
+                  "Contact_MailboxTrackingFolder@odata.associationLink",
+                  "Contact_MailboxTrackingFolder@odata.navigationLink",
+                  "Contact_Appointments@odata.associationLink",
+                  "Contact_Appointments@odata.navigationLink",
+                  "owninguser@odata.associationLink",
+                  "owninguser@odata.navigationLink",
+                  "Contact_AsyncOperations@odata.associationLink",
+                  "Contact_AsyncOperations@odata.navigationLink",
+                  "transactioncurrencyid@odata.associationLink",
+                  "transactioncurrencyid@odata.navigationLink",
+                  "Contact_RecurringAppointmentMasters@odata.associationLink",
+                  "Contact_RecurringAppointmentMasters@odata.navigationLink",
+                  "entityimageid_imagedescriptor@odata.associationLink",
+                  "entityimageid_imagedescriptor@odata.navigationLink",
+                  "Contact_BulkDeleteFailures@odata.associationLink",
+                  "Contact_BulkDeleteFailures@odata.navigationLink",
+                  "parentcustomerid_contact@odata.associationLink",
+                  "parentcustomerid_contact@odata.navigationLink",
+                  "contact_customer_contacts@odata.associationLink",
+                  "contact_customer_contacts@odata.navigationLink",
+                  "contact_connections2@odata.associationLink",
+                  "contact_connections2@odata.navigationLink",
+                  "Contact_DuplicateBaseRecord@odata.associationLink",
+                  "Contact_DuplicateBaseRecord@odata.navigationLink",
+                  "modifiedby@odata.associationLink",
+                  "modifiedby@odata.navigationLink",
+                  "Contact_Emails@odata.associationLink",
+                  "Contact_Emails@odata.navigationLink",
+                  "ModifiedByExternalParty@odata.associationLink",
+                  "ModifiedByExternalParty@odata.navigationLink",
+                  "contact_activity_parties@odata.associationLink",
+                  "contact_activity_parties@odata.navigationLink",
+                  "Contact_Letters@odata.associationLink",
+                  "Contact_Letters@odata.navigationLink",
+                  "contact_chats@odata.associationLink",
+                  "contact_chats@odata.navigationLink",
+                  "lead_customer_contacts@odata.associationLink",
+                  "lead_customer_contacts@odata.navigationLink",
+                  "contactleads_association@odata.associationLink",
+                  "contactleads_association@odata.navigationLink",
+                  "lead_parent_contact@odata.associationLink",
+                  "lead_parent_contact@odata.navigationLink",
+                  "originatingleadid@odata.associationLink",
+                  "originatingleadid@odata.navigationLink",
+                  "defaultpricelevelid@odata.associationLink",
+                  "defaultpricelevelid@odata.navigationLink",
+                  "contact_bookableresource_ContactId@odata.associationLink",
+                  "contact_bookableresource_ContactId@odata.navigationLink",
+                  "contact_BulkOperations@odata.associationLink",
+                  "contact_BulkOperations@odata.navigationLink",
+                  "CreatedContact_BulkOperationLogs@odata.associationLink",
+                  "CreatedContact_BulkOperationLogs@odata.navigationLink",
+                  "SourceContact_BulkOperationLogs@odata.associationLink",
+                  "SourceContact_BulkOperationLogs@odata.navigationLink",
+                  "contact_CampaignResponses@odata.associationLink",
+                  "contact_CampaignResponses@odata.navigationLink",
+                  "listcontact_association@odata.associationLink",
+                  "listcontact_association@odata.navigationLink",
+                  "BulkOperation_Logs_Contacts@odata.associationLink",
+                  "BulkOperation_Logs_Contacts@odata.navigationLink",
+                  "CampaignActivity_Logs_Contacts@odata.associationLink",
+                  "CampaignActivity_Logs_Contacts@odata.navigationLink",
+                  "Contact_ServiceAppointments@odata.associationLink",
+                  "Contact_ServiceAppointments@odata.navigationLink",
+                  "contact_as_responsible_contact@odata.associationLink",
+                  "contact_as_responsible_contact@odata.navigationLink",
+                  "contractlineitem_customer_contacts@odata.associationLink",
+                  "contractlineitem_customer_contacts@odata.navigationLink",
+                  "contract_billingcustomer_contacts@odata.associationLink",
+                  "contract_billingcustomer_contacts@odata.navigationLink",
+                  "contract_customer_contacts@odata.associationLink",
+                  "contract_customer_contacts@odata.navigationLink",
+                  "incident_customer_contacts@odata.associationLink",
+                  "incident_customer_contacts@odata.navigationLink",
+                  "contact_as_primary_contact@odata.associationLink",
+                  "contact_as_primary_contact@odata.navigationLink",
+                  "contact_entitlement_ContactId@odata.associationLink",
+                  "contact_entitlement_ContactId@odata.navigationLink",
+                  "contact_entitlement_Customer@odata.associationLink",
+                  "contact_entitlement_Customer@odata.navigationLink",
+                  "entitlementcontacts_association@odata.associationLink",
+                  "entitlementcontacts_association@odata.navigationLink",
+                  "servicecontractcontacts_association@odata.associationLink",
+                  "servicecontractcontacts_association@odata.navigationLink",
+                  "preferredequipmentid@odata.associationLink",
+                  "preferredequipmentid@odata.navigationLink",
+                  "preferredserviceid@odata.associationLink",
+                  "preferredserviceid@odata.navigationLink",
+                  "contactinvoices_association@odata.associationLink",
+                  "contactinvoices_association@odata.navigationLink",
+                  "contactorders_association@odata.associationLink",
+                  "contactorders_association@odata.navigationLink",
+                  "contact_customer_opportunity_roles@odata.associationLink",
+                  "contact_customer_opportunity_roles@odata.navigationLink",
+                  "invoice_customer_contacts@odata.associationLink",
+                  "invoice_customer_contacts@odata.navigationLink",
+                  "opportunity_customer_contacts@odata.associationLink",
+                  "opportunity_customer_contacts@odata.navigationLink",
+                  "order_customer_contacts@odata.associationLink",
+                  "order_customer_contacts@odata.navigationLink",
+                  "quote_customer_contacts@odata.associationLink",
+                  "quote_customer_contacts@odata.navigationLink",
+                  "contactquotes_association@odata.associationLink",
+                  "contactquotes_association@odata.navigationLink",
+                  "opportunity_parent_contact@odata.associationLink",
+                  "opportunity_parent_contact@odata.navigationLink",
+                  "msdyn_playbookinstance_contact@odata.associationLink",
+                  "msdyn_playbookinstance_contact@odata.navigationLink",
+                  "msdyn_msdyn_taggedrecord_contact_msdyn_dynamicsrecordid@odata.associationLink",
+                  "msdyn_msdyn_taggedrecord_contact_msdyn_dynamicsrecordid@odata.navigationLink",
+                  "contact_Posts@odata.associationLink",
+                  "contact_Posts@odata.navigationLink",
+                  "contact_msfp_alerts@odata.associationLink",
+                  "contact_msfp_alerts@odata.navigationLink",
+                  "contact_msfp_surveyinvites@odata.associationLink",
+                  "contact_msfp_surveyinvites@odata.navigationLink",
+                  "contact_msfp_surveyresponses@odata.associationLink",
+                  "contact_msfp_surveyresponses@odata.navigationLink",
+                  "msdyn_msdyn_preferredagent_contact_msdyn_recordId@odata.associationLink",
+                  "msdyn_msdyn_preferredagent_contact_msdyn_recordId@odata.navigationLink",
+                  "contact_msdyn_ocliveworkitems@odata.associationLink",
+                  "contact_msdyn_ocliveworkitems@odata.navigationLink",
+                  "contact_msdyn_ocsessions@odata.associationLink",
+                  "contact_msdyn_ocsessions@odata.navigationLink",
+                  "msdyn_contact_msdyn_ocliveworkitem_Customer@odata.associationLink",
+                  "msdyn_contact_msdyn_ocliveworkitem_Customer@odata.navigationLink",
+                  "msdyn_contact_msdyn_liveconversation_Customer@odata.associationLink",
+                  "msdyn_contact_msdyn_liveconversation_Customer@odata.navigationLink",
+                  "msdyn_contact_msdyn_salessuggestion@odata.associationLink",
+                  "msdyn_contact_msdyn_salessuggestion@odata.navigationLink",
+                  "msdyn_segmentid@odata.associationLink",
+                  "msdyn_segmentid@odata.navigationLink",
+                  "agip_agip_partner_PointofContact_contact@odata.associationLink",
+                  "agip_agip_partner_PointofContact_contact@odata.navigationLink",
+                  "agip_agip_vehiclepartners_PointofContact_conta@odata.associationLink",
+                  "agip_agip_vehiclepartners_PointofContact_conta@odata.navigationLink",
+                  "agip_contact_ReportsTo_contact@odata.associationLink",
+                  "agip_contact_ReportsTo_contact@odata.navigationLink",
+                  "#Microsoft.Dynamics.CRM.msdyn_GDPROptoutContact"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

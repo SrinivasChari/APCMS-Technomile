@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{b83d53da-2add-ed11-a7c7-000d3a37d3bf}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fullname" select="1" icon="1" preview="1">
+        <row name="result" id="contactid">
+          <cell name="fullname" width="200" />
+          <cell name="firstname" width="100" />
+          <cell name="lastname" width="100" />
+          <cell name="emailaddress1" width="100" />
+          <cell name="jobtitle" width="100" />
+          <cell name="parentcustomerid" width="146" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="contact">
+          <attribute name="fullname" />
+          <attribute name="contactid" />
+          <order attribute="fullname" descending="false" />
+          <attribute name="emailaddress1" />
+          <attribute name="jobtitle" />
+          <attribute name="parentcustomerid" />
+          <attribute name="firstname" />
+          <attribute name="lastname" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>23.4.12.3</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="All Contacts" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

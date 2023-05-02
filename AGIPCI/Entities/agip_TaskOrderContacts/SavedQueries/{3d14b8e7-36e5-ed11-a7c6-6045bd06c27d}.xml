@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{3d14b8e7-36e5-ed11-a7c6-6045bd06c27d}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="agip_name" select="1" icon="1" preview="1">
+        <row name="result" id="agip_taskordercontactsid">
+          <cell name="agip_action" width="100" />
+          <cell name="agip_accounts" width="100" />
+          <cell name="agip_contactname" width="121" />
+          <cell name="agip_email" width="100" />
+          <cell name="agip_mainpoc" width="101" />
+          <cell name="agip_receivesmassemails" width="166" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="agip_taskordercontacts">
+          <attribute name="agip_taskordercontactsid" />
+          <attribute name="agip_accounts" />
+          <attribute name="agip_contactname" />
+          <attribute name="agip_mainpoc" />
+          <attribute name="agip_receivesmassemails" />
+          <attribute name="agip_email" />
+          <attribute name="agip_action" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>23.4.12.3</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Task Order Contacts" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

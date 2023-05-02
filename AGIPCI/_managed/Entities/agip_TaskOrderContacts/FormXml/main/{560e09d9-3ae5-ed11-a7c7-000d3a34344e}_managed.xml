@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{560e09d9-3ae5-ed11-a7c7-000d3a34344e}</formid>
+    <IntroducedVersion>23.4.12.3</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{cfd054e8-0a38-41ac-94a8-cc7e21993a8b}" IsUserDefined="1" labelid="{437211ee-4b94-4952-aba4-ed2eada81897}">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{1f6d2600-01b1-47e8-95a4-31d2faab4163}" columns="11" labelid="{13c76957-cc11-47aa-83b3-5bf2531408dd}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{64722e21-e69a-4f18-99f4-38be03f159e1}" visible="false" labelid="{fce55c86-4eaa-468c-8abe-f23949c9ff86}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                      <cell id="{1bf5eb41-fbc6-477f-9375-7865678c746f}" locklevel="0" colspan="1" rowspan="1" labelid="{63142c44-3b69-4656-9d5c-9d47d2dae949}">
+                        <labels>
+                          <label description="Accounts" languagecode="1033" />
+                        </labels>
+                        <control id="agip_accounts" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_accounts" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{afe5f908-1e9b-493c-80c0-5b50e2309d44}" locklevel="0" colspan="1" rowspan="1" labelid="{bc1d480c-a3dd-49b4-8a46-9f41ecda8ef1}">
+                        <labels>
+                          <label description="Action" languagecode="1033" />
+                        </labels>
+                        <control id="agip_action" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_action" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{94cf4d94-1c86-4966-a0eb-cb5da4404d86}" locklevel="0" colspan="1" rowspan="1" labelid="{22a90f07-8c73-4193-b5f4-84193971d6fc}">
+                        <labels>
+                          <label description="Contact Name" languagecode="1033" />
+                        </labels>
+                        <control id="agip_contactname" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_contactname" disabled="false" />
+                      </cell>
+                      <cell id="{63d74ae8-c1ca-4080-bc3c-cc6e4589e1b2}" locklevel="0" colspan="1" rowspan="1" labelid="{5548284e-170a-4cdc-bb6f-e11fc9317cc2}">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="agip_email" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="agip_email" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{41c9f7c8-a2fd-43e5-adf6-0ec0745fed82}" locklevel="0" colspan="1" rowspan="1" labelid="{5e0a8761-9684-4029-9b82-c9d65aca9e42}">
+                        <labels>
+                          <label description="Main POC" languagecode="1033" />
+                        </labels>
+                        <control id="agip_mainpoc" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="agip_mainpoc" disabled="false" />
+                      </cell>
+                      <cell id="{ee6b64c6-71be-4ff8-90a4-d123cf8c09b4}" locklevel="0" colspan="1" rowspan="1" labelid="{b38d30bb-b4f3-4160-865c-896380c0b7e1}">
+                        <labels>
+                          <label description="Receives Mass Emails" languagecode="1033" />
+                        </labels>
+                        <control id="agip_receivesmassemails" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="agip_receivesmassemails" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1f904b47-3a76-4ad4-8864-43f48ef50072}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskorder" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_taskorder" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{2d25ae10-5ebf-469e-b421-c968d3b0a265}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{dca41df9-b2d6-4b0e-8ccb-7cc14888e039}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{647cae28-0c8a-42e8-bb6d-bd7d93216d95}" showlabel="false" labelid="{298b75e1-40f0-47c1-aadb-7e1545e822eb}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{4b2dfba2-4c42-407f-8191-0bb82cb1263f}" showlabel="false" labelid="{b917ffb8-c969-483c-ad68-29696927909d}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d4c4f8b0-6c09-46dd-9ccf-75365e771c74}" showlabel="false" labelid="{16fba8e7-acf0-4183-a87e-228cc45a0b1e}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{e1392b5b-2ec5-4f89-a19d-a78cc8822074}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{8bd987b3-81a4-4330-aa35-6cf1a08b55e2}" showlabel="false" labelid="{600f543e-3d02-4218-b840-0738e14b4f89}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{666f3314-c4fd-4a02-9aac-75f485259f29}" showlabel="false" labelid="{3ddb7b7e-e98e-4728-adca-4df7eb5815ce}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{8010c82b-f777-46a6-944d-8327105b772c}" showlabel="false" labelid="{53e54f31-83c5-4388-b303-8b1d1b6d20a1}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Task Order Contacts main form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

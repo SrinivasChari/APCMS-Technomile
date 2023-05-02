@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{dbebbf61-03e6-ed11-a7c7-000d3a34344e}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="agip_name" select="1" icon="1" preview="1">
+        <row name="result" id="agip_competitorstmid">
+          <cell name="agip_proposalcomponent" width="158" />
+          <cell name="agip_competitor" width="104" />
+          <cell name="agip_incumbent" width="100" />
+          <cell name="agip_strengths" width="100" />
+          <cell name="agip_weaknesses" width="108" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="agip_competitorstm">
+          <attribute name="agip_competitorstmid" />
+          <attribute name="agip_proposalcomponent" />
+          <attribute name="agip_competitor" />
+          <attribute name="agip_incumbent" />
+          <attribute name="agip_strengths" />
+          <attribute name="agip_weaknesses" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>23.4.12.3</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="All Competitors" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

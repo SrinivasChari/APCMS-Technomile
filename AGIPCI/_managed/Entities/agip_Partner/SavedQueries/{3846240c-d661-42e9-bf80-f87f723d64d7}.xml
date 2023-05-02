@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{3846240c-d661-42e9-bf80-f87f723d64d7}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="agip_name" select="1" icon="1" preview="1">
+        <row name="result" id="agip_partnerid">
+          <cell name="agip_partner" width="100" />
+          <cell name="agip_partnerrole" width="100" />
+          <cell name="agip_partnerworkshare" width="100" />
+          <cell name="agip_pointofcontact" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="agip_partner">
+          <attribute name="agip_partnerid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="agip_partner" />
+          <attribute name="agip_partnerrole" />
+          <attribute name="agip_partnerworkshare" />
+          <attribute name="agip_pointofcontact" />
+          <order attribute="agip_partner" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Partners By Role" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

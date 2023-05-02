@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ab2f15ca-1ee5-ed11-a7c6-6045bd06c27d}</formid>
+    <IntroducedVersion>23.4.12.3</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{0a144157-bba3-4006-af42-27dc5958a971}" IsUserDefined="1" labelid="{70b5fea8-ae67-4987-ada3-f603972bf762}" name="Contract Vehicle &amp; Customer Information">
+          <labels>
+            <label description="Details" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{b7419f2e-a977-4604-9b48-d2034faa4dbf}" name="Details" labelid="{828f0518-ec32-495d-8b90-370c43c6993a}" columns="11">
+                  <labels>
+                    <label description="Details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{eca8b48f-ddc2-4568-b642-8c796064c58b}" labelid="{d899c1ef-7a40-47f0-906a-3e71f405edfe}" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                      <cell id="{337f70f4-8833-463d-a5c8-7a03eef825cb}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="agip_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_name" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{ad9baa01-3650-4bfa-a429-224619cf8add}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{65914a1d-f776-49b0-9df3-592bb11a9286}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order Stage" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskorderstage" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="agip_taskorderstage" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cd800dcc-dc8a-4b93-84ec-fa238c7a24ea}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order Number" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskordernumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_taskordernumber" disabled="false" />
+                      </cell>
+                      <cell id="{f89ba416-3f95-4e6d-82cd-64499ee85006}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order Contract Value" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskordercontractvalue" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="agip_taskordercontractvalue" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{510564e9-5536-4abb-bbd2-48954fb05a91}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Period of Performance" languagecode="1033" />
+                        </labels>
+                        <control id="agip_periodofperformance" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="agip_periodofperformance" disabled="false" />
+                      </cell>
+                      <cell id="{604e10c6-ad6e-4aa6-8cf7-3e2e67233e32}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order Contract Type" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskordercontracttype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="agip_taskordercontracttype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e09d69ed-3c49-46a0-9adf-781171ca3c13}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order Spending to Date ($K)" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskorderspendingtodatek" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="agip_taskorderspendingtodatek" disabled="false" />
+                      </cell>
+                      <cell id="{6d18ac9f-0de7-432f-b757-c91595570147}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="NAICS" languagecode="1033" />
+                        </labels>
+                        <control id="agip_naics" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_naics" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c409cc43-24d4-41c7-b30b-15bc11d7d470}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order Set-Aside" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskordersetaside" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_taskordersetaside" disabled="false" />
+                      </cell>
+                      <cell id="{7b11bbb8-6aec-4962-b249-a865a891930c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Scope Picklist" languagecode="1033" />
+                        </labels>
+                        <control id="agip_scopepicklist" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="agip_scopepicklist" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7bcfed8d-fbb3-4d04-b7ef-914bc331b3f9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Base &amp; Exercised Options" languagecode="1033" />
+                        </labels>
+                        <control id="agip_baseexercisedoptions" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="agip_baseexercisedoptions" disabled="false" />
+                      </cell>
+                      <cell id="{663b4037-bec3-427c-a43c-0c1472f0300b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Base &amp; All Options (Ceiling)" languagecode="1033" />
+                        </labels>
+                        <control id="agip_basealloptionsceiling" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="agip_basealloptionsceiling" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6aee2654-1856-41fc-8908-49d3af8dcd9b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Funding Status" languagecode="1033" />
+                        </labels>
+                        <control id="agip_fundingstatus" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_fundingstatus" disabled="false" />
+                      </cell>
+                      <cell id="{32b66b22-d017-4a43-bbd7-320f88860658}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Initial Award Value" languagecode="1033" />
+                        </labels>
+                        <control id="agip_initialawardvalue" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="agip_initialawardvalue" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ea61d425-feac-45bb-b8f5-6b43fe73087d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order Contracting Activity" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskordercontractingactivity" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_taskordercontractingactivity" disabled="false" />
+                      </cell>
+                      <cell id="{0312d882-5112-4c1c-be4f-258e406ab721}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Individual Receiving Shipment" languagecode="1033" />
+                        </labels>
+                        <control id="agip_individualreceivingshipment" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="agip_individualreceivingshipment" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{48c45a0f-d758-473b-b575-384ae1b79dd1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="PSC" languagecode="1033" />
+                        </labels>
+                        <control id="agip_psc" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_psc" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{7d8eacf9-2ca9-46ae-b6dc-2a9d1bcb8199}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{942c9734-9360-4901-bf7e-0a49681e8b2a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Teaming Partner Identification" languagecode="1033" />
+                        </labels>
+                        <control id="agip_teamingpartneridentification" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="agip_teamingpartneridentification" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{7f09d8f7-29a9-4152-8480-5b563a68a4d7}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c5af80af-d5d5-4365-a357-434624faf7f7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Incumbent" languagecode="1033" />
+                        </labels>
+                        <control id="agip_incumbent" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_incumbent" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{b30036a9-8634-494d-a954-09da1085b438}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{999190a9-447f-4f96-b31b-404eb66c0de1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order Place of Performance" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskorderplaceofperformance" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="agip_taskorderplaceofperformance" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{bb401953-88e5-4777-a28d-a303e2cf749b}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_4" id="5596ed3d-8f64-4907-9aa0-73857562a5b0" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Contract Vehicle &amp; Customer Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c71d9f66-026e-47ec-8098-a6c9e52b553f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Contract Vehicle Name" languagecode="1033" />
+                        </labels>
+                        <control id="agip_contractvehiclename" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_contractvehiclename" disabled="false" />
+                      </cell>
+                      <cell id="{21294647-df18-4224-9bfb-adef1fd40790}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Contract Number" languagecode="1033" />
+                        </labels>
+                        <control id="agip_contractnumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_contractnumber" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{82321a5a-6dd0-4e7d-b693-8a8b88255cf8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Customer Organization" languagecode="1033" />
+                        </labels>
+                        <control id="agip_customerorganization" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_customerorganization" disabled="false" />
+                      </cell>
+                      <cell id="{482c4abf-110c-457b-8977-a84acaf412d6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order Contracting Organization" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskordercontractingorganization" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_taskordercontractingorganization" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Internal Distribution" id="796f71f4-2618-4d1a-9704-0c6673cdef39" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Internal Distribution" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4e2f2225-2018-40d9-ba2e-00e8e9b59ada}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Distribute Task Order Internally" languagecode="1033" />
+                        </labels>
+                        <control id="agip_distributetaskorderinternally" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="agip_distributetaskorderinternally" disabled="false" />
+                      </cell>
+                      <cell id="{9642f4fb-d7cb-4234-8437-a637e463af4b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Industry Vertical Lead" languagecode="1033" />
+                        </labels>
+                        <control id="agip_industryverticallead" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_industryverticallead" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a3bdc307-20b4-4237-bbbc-263be56a652b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Program Manager" languagecode="1033" />
+                        </labels>
+                        <control id="agip_programmanager" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_programmanager" disabled="false" />
+                      </cell>
+                      <cell id="{4becb56b-1bdb-4085-bdce-af05f36c7aad}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Proposal Development POC" languagecode="1033" />
+                        </labels>
+                        <control id="agip_proposaldevelopmentpoc" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_proposaldevelopmentpoc" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{696ac92f-ef4b-408a-8a7e-df46e69953f9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Agency Account Executive" languagecode="1033" />
+                        </labels>
+                        <control id="agip_agencyaccountexecutive" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_agencyaccountexecutive" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{4d4f2ae0-4687-471b-8084-421e48605b3d}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Task Order Post Mortem" id="55f7d334-748a-4833-b409-99885e7d4230" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Task Order Post Mortem" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7738f96e-9991-4185-ab3d-085cffc8d630}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Proposal Quality" languagecode="1033" />
+                        </labels>
+                        <control id="agip_proposalquality" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="agip_proposalquality" disabled="false" />
+                      </cell>
+                      <cell id="{86b6f513-a04a-4870-b53f-68fa1f0cbe9f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="General Feedback from the Main POC" languagecode="1033" />
+                        </labels>
+                        <control id="agip_generalfeedbackfromthemainpoc" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_generalfeedbackfromthemainpoc" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{96077e9d-5c60-4265-beea-113f3ed4a41c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Price Comparison" languagecode="1033" />
+                        </labels>
+                        <control id="agip_pricecomparison" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="agip_pricecomparison" disabled="false" />
+                      </cell>
+                      <cell id="{128f3932-39ec-425b-bbf7-48e3458050ae}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Teaming Plan" languagecode="1033" />
+                        </labels>
+                        <control id="agip_teamingplan" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="agip_teamingplan" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c8fcc6b7-b133-487a-9fe1-42e9689118ee}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Lessons Learned" languagecode="1033" />
+                        </labels>
+                        <control id="agip_lessonslearned" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="agip_lessonslearned" disabled="false" />
+                      </cell>
+                      <cell id="{3626b9df-176f-4bc3-b6ba-06725b4fc3d7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Identified Deficiencies during debrief" languagecode="1033" />
+                        </labels>
+                        <control id="agip_identifieddeficienciesduringdebrief" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="agip_identifieddeficienciesduringdebrief" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Task Order Date" id="8d494154-aca7-418e-9fc8-8ed1994c7857" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Task Order Date" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{406b1937-e0ee-4569-900c-916b115011e2}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="RFP/TO Release Date" languagecode="1033" />
+                        </labels>
+                        <control id="agip_rfptoreleasedate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="agip_rfptoreleasedate" disabled="false" />
+                      </cell>
+                      <cell id="{994168ff-44d4-4980-8761-84e905b13894}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Questions Due Date" languagecode="1033" />
+                        </labels>
+                        <control id="agip_questionsduedate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="agip_questionsduedate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d8dd772b-05f1-4b1d-93ad-151568b0eb5c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Proposal Due Date" languagecode="1033" />
+                        </labels>
+                        <control id="agip_proposalduedate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="agip_proposalduedate" disabled="false" />
+                      </cell>
+                      <cell id="{6bbfa528-fca4-4d26-ab12-171f8f2e32be}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Award Date" languagecode="1033" />
+                        </labels>
+                        <control id="agip_awarddate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="agip_awarddate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e5d82cd8-29fc-4bb1-a49a-c03f4ca7da2a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Start Date" languagecode="1033" />
+                        </labels>
+                        <control id="agip_startdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="agip_startdate" disabled="false" />
+                      </cell>
+                      <cell id="{3dee335d-e041-4c6d-9128-f19678772b99}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Estimated End Date" languagecode="1033" />
+                        </labels>
+                        <control id="agip_estimatedenddate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="agip_estimatedenddate" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Program Summary" id="ca20a59b-5b54-46e5-9a12-9d6f4d31cd9b" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Program Summary" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4c60c675-3b15-4148-8811-8a199edbb8f6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Program Summary" languagecode="1033" />
+                        </labels>
+                        <control id="agip_programsummary" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="agip_programsummary" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Fields From Contract Website Like Ebuy" id="89c2eb40-260e-4016-bfd0-27f814fb2bee" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Fields From Contract Website Like Ebuy" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{38700008-8993-4614-9551-340e52831bb8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Is Cancelled" languagecode="1033" />
+                        </labels>
+                        <control id="agip_iscancelled" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="agip_iscancelled" disabled="false" />
+                      </cell>
+                      <cell id="{25554d72-4398-45f6-87b3-985df06c4cd6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Buyer" languagecode="1033" />
+                        </labels>
+                        <control id="agip_buyer" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_buyer" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{74b486e1-60ae-48bd-ad27-71475c04a16f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Category" languagecode="1033" />
+                        </labels>
+                        <control id="agip_category" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_category" disabled="false" />
+                      </cell>
+                      <cell id="{90bfdaa6-a7b9-44d0-b22e-885f2c9562b9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Zone" languagecode="1033" />
+                        </labels>
+                        <control id="agip_zone" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_zone" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{87564387-7f9e-4023-9986-921bca3d623b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Delivery" languagecode="1033" />
+                        </labels>
+                        <control id="agip_delivery" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_delivery" disabled="false" />
+                      </cell>
+                      <cell id="{40748f93-ee24-43a2-810b-e79bc60e0611}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Reference #" languagecode="1033" />
+                        </labels>
+                        <control id="agip_reference" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_reference" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b624e9ea-7863-4373-b7ad-ca205a3d323d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Task Order Action" languagecode="1033" />
+                        </labels>
+                        <control id="agip_taskorderaction" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_taskorderaction" disabled="false" />
+                      </cell>
+                      <cell id="{1abff4a5-923f-4184-88d0-c4709510b3b5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Set Aside" languagecode="1033" />
+                        </labels>
+                        <control id="agip_setaside" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_setaside" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{17cc13ed-6a97-4891-b265-b22737f7ca5f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Base Year End Date" languagecode="1033" />
+                        </labels>
+                        <control id="agip_baseyearenddate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="agip_baseyearenddate" disabled="false" />
+                      </cell>
+                      <cell id="{c6cd895b-e5d0-412a-bf92-ad4717d30466}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Stop Date" languagecode="1033" />
+                        </labels>
+                        <control id="agip_stopdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="agip_stopdate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8d8335a3-81b9-42ae-b35e-f5946579b831}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Market Research Due Date" languagecode="1033" />
+                        </labels>
+                        <control id="agip_marketresearchduedate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="agip_marketresearchduedate" disabled="false" />
+                      </cell>
+                      <cell id="{8072ef88-1f1c-4cc7-bbfb-84f2c4c885c9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Submitted Market Research?" languagecode="1033" />
+                        </labels>
+                        <control id="agip_submittedmarketresearch" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="agip_submittedmarketresearch" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b21a40cb-1848-47f1-b8a4-96cb8920dbce}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="POP Notes" languagecode="1033" />
+                        </labels>
+                        <control id="agip_popnotes" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_popnotes" disabled="false" />
+                      </cell>
+                      <cell id="{5377d720-5460-4977-9d86-e4d522b0821b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Request No." languagecode="1033" />
+                        </labels>
+                        <control id="agip_requestno" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_requestno" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f584b656-d06c-4868-802e-adfa0fee9bc5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Primary Requirement" languagecode="1033" />
+                        </labels>
+                        <control id="agip_primaryrequirement" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_primaryrequirement" disabled="false" />
+                      </cell>
+                      <cell id="{7eb24df6-9d7a-4056-b7ee-6e5e4d0ded6d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="agip_description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="agip_description" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="System Information" id="b9b35066-2899-4783-8720-c4279c94ca2b" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="System Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{85a13bf7-5dad-4cfa-8325-1f66f1f41db4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Created By" languagecode="1033" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                      </cell>
+                      <cell id="{111ac040-362f-4f38-9d3d-7cd17bfffb37}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Modified By" languagecode="1033" />
+                        </labels>
+                        <control id="modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a5d87602-d9aa-469a-8a40-164d59b1a48d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Created On" languagecode="1033" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                      <cell id="{0cde9893-6498-4419-8d6e-92e5cc67ced1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Modified On" languagecode="1033" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="Contract Vehicle &amp; Customer Information_section_11" id="0bd60450-d396-4dab-89cf-dffc2357520a" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Activities" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{c2262a87-ca57-4dcd-ae98-acb22e5e9754}" rowspan="15" colspan="1">
+                        <labels>
+                          <label description="Note Text" languagecode="1033" />
+                        </labels>
+                        <control id="notescontrol" classid="{06375649-C143-495E-A496-C962E5B4488E}" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="50d97288-d2b1-40c0-be86-5bf460f259b0" IsUserDefined="0" locklevel="0" showlabel="true" labelid="{5599a30f-4a43-4ea4-8bcd-7842fb3a3a19}">
+          <labels>
+            <label description="Task Order Contacts" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="2a8dfccf-c068-4a4e-a711-df85a8c08b84" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{80572209-c194-4dd0-ba72-498ec981d855}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{66748290-5f18-4135-8c04-d8892a971cc9}" rowspan="4" colspan="1" auto="false" showlabel="false">
+                        <labels>
+                          <label description="New SG control 1682627138572" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>agip_taskordercontacts</TargetEntityType>
+                            <ViewId>{3D14B8E7-36E5-ED11-A7C6-6045BD06C27D}</ViewId>
+                            <ViewIds>{F193E16E-EE9C-4523-AC88-45375C17A95A},{3D14B8E7-36E5-ED11-A7C6-6045BD06C27D}</ViewIds>
+                            <RelationshipName>agip_agip_taskordercontacts_TaskOrder_agip_tas</RelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{09b6e0ae-dbcb-44d1-8d48-3e0ee2d3605b}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{51fcb7c1-0d6f-4b6a-bc15-a365271416ef}" showlabel="false" labelid="{a63112b9-d7cf-4898-b7a4-ff302c7e857f}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{45384b5a-4504-4e4a-a315-416d7c7d6dc9}" showlabel="false" labelid="{dd9897e7-148a-42c2-8bb1-efe095fb21a6}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{63cdc769-6dc2-4a37-b353-658d7103e900}" showlabel="false" labelid="{430f2b1d-7db8-4460-a520-bc2a435677ee}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{eac51646-235e-443d-84b8-6a5bba0e1678}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{41fc1639-ab84-4da0-92ef-62967c64a5c4}" showlabel="false" labelid="{8f5266b4-fa68-439e-b306-8d1920e249bd}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{5e89cb7e-0896-4600-a13f-22d33d66b532}" showlabel="false" labelid="{c2eaf143-8d2b-4647-9ae5-81892a4c96ed}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{3595b351-e992-411a-8e51-20c5413ab5fe}" showlabel="false" labelid="{5649045a-6ad8-437b-b328-679ad9a527e9}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Task Order" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

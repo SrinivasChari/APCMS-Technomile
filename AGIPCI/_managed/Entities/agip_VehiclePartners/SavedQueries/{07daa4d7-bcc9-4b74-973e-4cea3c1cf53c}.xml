@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{07daa4d7-bcc9-4b74-973e-4cea3c1cf53c}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="agip_name" select="1" icon="1" preview="1">
+        <row name="result" id="agip_vehiclepartnersid">
+          <cell name="agip_accountname" width="100" />
+          <cell name="agip_role" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="agip_vehiclepartners">
+          <attribute name="agip_vehiclepartnersid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="agip_accountname" />
+          <attribute name="agip_role" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Vehicle Partners" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

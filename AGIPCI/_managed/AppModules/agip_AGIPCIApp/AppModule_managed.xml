@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>agip_AGIPCIApp</UniqueName>
+  <IntroducedVersion>23.4.12.3</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="account" />
+    <AppModuleComponent type="26" id="{65ffaf9a-e8c5-432d-860b-32f841b00d87}" />
+    <AppModuleComponent type="60" id="{cc02ce61-24d2-ed11-a7c7-000d3a37d3bf}" />
+    <AppModuleComponent type="1" schemaName="opportunity" />
+    <AppModuleComponent type="26" id="{c6f6fc1b-1b3e-e711-80e1-00155d871bb4}" />
+    <AppModuleComponent type="60" id="{a837e4a7-01b8-4f82-a475-be9abd67e667}" />
+    <AppModuleComponent type="1" schemaName="agip_taskorder" />
+    <AppModuleComponent type="26" id="{c3a789da-1ce5-ed11-a7c7-000d3a34344e}" />
+    <AppModuleComponent type="60" id="{ab2f15ca-1ee5-ed11-a7c6-6045bd06c27d}" />
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="26" id="{b83d53da-2add-ed11-a7c7-000d3a37d3bf}" />
+    <AppModuleComponent type="60" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
+    <AppModuleComponent type="1" schemaName="agip_competitorstm" />
+    <AppModuleComponent type="26" id="{dbebbf61-03e6-ed11-a7c7-000d3a34344e}" />
+    <AppModuleComponent type="60" id="{07f9ca7d-dbaf-4ce4-91fe-13177f4c889a}" />
+    <AppModuleComponent type="60" id="{a104b835-9f3b-e511-80d1-00155db10d2b}" />
+    <AppModuleComponent type="62" schemaName="agip_AGIPCIApp" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="AGIP CI App" languagecode="1033" />
+  </LocalizedNames>
+</AppModule>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{c6f6fc1b-1b3e-e711-80e1-00155d871bb4}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="name" select="1" preview="1" icon="1">
+        <row name="result" id="opportunityid">
+          <cell name="name" width="150" />
+          <cell name="parentaccountid" width="100" />
+          <cell name="crd2f_stage" width="100" />
+          <cell name="crd2f_pwin" width="100" />
+          <cell name="estimatedclosedate" width="100" />
+          <cell name="crd7270_estimatedawarddate" width="100" />
+          <cell name="crd7270_estimatedrfpreleasedate" width="100" />
+          <cell name="crd2f_totalcontractvalue" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="opportunity">
+          <attribute name="name" />
+          <order attribute="name" descending="false" />
+          <attribute name="opportunityid" />
+          <attribute name="parentaccountid" />
+          <attribute name="crd2f_stage" />
+          <attribute name="crd2f_pwin" />
+          <attribute name="estimatedclosedate" />
+          <attribute name="crd2f_totalcontractvalue" />
+          <attribute name="crd7270_estimatedawarddate" />
+          <attribute name="crd7270_estimatedrfpreleasedate" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="All Opportunities" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Shows all the opportunities" languagecode="1033" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

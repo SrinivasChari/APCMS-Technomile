@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0009f4bb-13d8-47b7-935f-0729e82a22de}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{3c93d314-828a-4427-b298-2683b67ee966}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{ece58d6e-e71e-4e7b-b576-7e4f32c6f183}" columns="11" name="General">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f10ab0e3-9c82-4d22-9065-6b05f0102f9e}" showlabel="true" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                      <cell id="{eee7bae4-bac0-43e6-9d61-4e9708f6968d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Opportunity Name" languagecode="1033" />
+                        </labels>
+                        <control id="agip_opportunityname" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_opportunityname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{85e98e1e-f159-4bfd-9d73-f74ea42c8996}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Partner" languagecode="1033" />
+                        </labels>
+                        <control id="agip_partner" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_partner" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{496f87d6-8aab-48b4-a853-c32640190de8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Partner Role" languagecode="1033" />
+                        </labels>
+                        <control id="agip_partnerrole" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="agip_partnerrole" disabled="false" />
+                      </cell>
+                      <cell id="{eeaf773b-e585-4323-9a68-8f4b048bf404}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Point of Contact" languagecode="1033" />
+                        </labels>
+                        <control id="agip_pointofcontact" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="agip_pointofcontact" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0db33947-25ae-4f20-b67a-b9f4e5162a73}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="NDA Received" languagecode="1033" />
+                        </labels>
+                        <control id="agip_ndareceived" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="agip_ndareceived" disabled="false" />
+                      </cell>
+                      <cell id="{0dbbb775-9300-4d27-b843-ccee67004cf5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Partner Workshare %" languagecode="1033" />
+                        </labels>
+                        <control id="agip_partnerworkshare" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="agip_partnerworkshare" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7342a9db-fcd4-4c9e-9ab0-68cddadf89a7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="TA Received" languagecode="1033" />
+                        </labels>
+                        <control id="agip_tareceived" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="agip_tareceived" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{83daed15-55f1-47cb-92d0-cb58fdb0de70}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{3cfe5ac4-2912-4a53-a4f7-ed503acce43a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Support Letter Sent" languagecode="1033" />
+                        </labels>
+                        <control id="agip_supportlettersent" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="agip_supportlettersent" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{f7773d51-b465-4f9e-891a-bf83512bf3fc}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell id="{a344cfdf-62ce-41e7-a4e1-5d7f1fdc09c1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Partner: Partner Record Number" languagecode="1033" />
+                        </labels>
+                        <control id="agip_partnerpartnerrecordnumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="agip_partnerpartnerrecordnumber" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{a4c19b36-74bc-4d1a-8f48-d83e131bf742}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{ad138c4c-b6b3-4d32-9e56-4e43d831dbb8}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{0a304257-3ac6-4d2c-9855-ffe58150cde4}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{21457a79-5dd8-4782-8628-eaacd61db82e}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{87a17c8f-7cc1-486b-b206-6f5feb7a92b5}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{a02972a7-bbb6-42cb-9c16-f94fc3c61590}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{0bd2467d-16e9-4e95-be93-e046c90893d1}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{79b8111f-4a7b-4baa-8b1a-4a3e894591f9}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Partner" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
